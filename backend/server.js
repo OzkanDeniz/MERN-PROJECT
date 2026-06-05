@@ -57,7 +57,7 @@ app.put("/api/products/:id", async (req, res) => {
     const updatedProducts = await Product.findByIdAndUpdate(id, product, {
       new: true,
     });
-    res.status(200).json({ success: true, data: uptatedProducts });
+    res.status(200).json({ success: true, data: updatedProducts });
   } catch (error) {
     res.status(500).json({ success: false, message: "Server Error" });
   }
