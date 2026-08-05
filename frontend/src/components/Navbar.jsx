@@ -1,4 +1,6 @@
-import { Container, Flex, Text, Link } from "@chakra-ui/react";
+import { Container, Flex, Text, Link, HStack, Button } from "@chakra-ui/react";
+import { Link as RouterLink } from "react-router-dom";
+import { LuSquarePlus } from "react-icons/lu";
 
 const Navbar = () => {
   return (
@@ -17,11 +19,23 @@ const Navbar = () => {
           fontWeight={"bold"}
           textTransform={"uppercase"}
           textAlign={"center"}
-          bgGradient={"linear(to-r, cyan.400, blue.500)"}
+          bgGradient={"to-r"}
+          gradientFrom={"cyan.400"}
+          gradientTo={"blue.500"}
           bgClip={"text"}
         >
-          <Link to={"/"}>Product Store 🛒</Link>
+          <Link as={RouterLink} to={"/"}>
+            Product Store 🛒
+          </Link>
         </Text>
+
+        <HStack spacing={2} alignItems={"center"}>
+          <Link as={RouterLink} to={"/create"}>
+            <Button>
+              <LuSquarePlus fontSize={20} />
+            </Button>
+          </Link>
+        </HStack>
       </Flex>
     </Container>
   );
