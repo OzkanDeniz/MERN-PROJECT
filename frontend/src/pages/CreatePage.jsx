@@ -1,12 +1,6 @@
 import { useState } from "react";
-import {
-  Container,
-  Vstack,
-  Heading,
-  Box,
-  useColorModeValue,
-  Input,
-} from "@chakra-ui/react";
+import { Container, VStack, Heading, Box, Input } from "@chakra-ui/react";
+import { useColorModeValue } from "@/components/ui/color-mode";
 
 const CreatePage = () => {
   const [newProduct, setNewProduct] = useState({
@@ -16,7 +10,7 @@ const CreatePage = () => {
   });
   return (
     <Container maxW={"container.sm"}>
-      <Vstack spacing={8}>
+      <VStack spacing={8}>
         <Heading as={"h1"} size={"2xl"} textAlign={"center"} mb={8}>
           Create New Product
         </Heading>
@@ -27,7 +21,7 @@ const CreatePage = () => {
           rounded={"lg"}
           shadow={"md"}
         >
-          <Vstack spacing={4}>
+          <VStack spacing={4}>
             <Input
               placeholder="Poduct Name"
               name="name"
@@ -54,9 +48,9 @@ const CreatePage = () => {
                 setNewProduct({ ...newProduct, image: e.target.value })
               }
             ></Input>
-          </Vstack>
+          </VStack>
         </Box>
-      </Vstack>
+      </VStack>
     </Container>
   );
 };
